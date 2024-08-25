@@ -1,0 +1,41 @@
+# ==============================================================================
+# @file: .clangd
+# @brief: Clangd configuration file.
+# ==============================================================================
+
+Diagnostics:
+  UnusedIncludes: None
+
+  ClangTidy:
+    Add: [
+      performance-*,
+      modernize-*,
+      clang-analyzer-*,
+      readability-identifier-naming,
+      readability-braces-around-statements,
+      readability-identifier-naming,
+      readability-implicit-bool-conversion,
+      readability-qualified-auto,
+      readability-redundant-member-init
+    ]
+
+    CheckOptions:
+      readability-identifier-naming.VariableCase: lowerCamelCase
+      readability-identifier-naming.ProtectedMemberCase: lowerCamelCase
+      readability-identifier-naming.PrivateMemberCase: lowerCamelCase
+      readability-identifier-naming.PublicMemberCase: lowerCamelCase
+      readability-identifier-naming.NamespaceCase: lower_case
+      readability-identifier-naming.EnumCase: lowerCamelCase
+      readability-identifier-naming.ClassCase: CamelCase
+      readability-identifier-naming.StructCase: CamelCase
+      readability-identifier-naming.FunctionCase: lowerCamelCase
+      readability-identifier-naming.ClassMethodCase: lowerCamelCase
+      readability-identifier-naming.MethodCase: lowerCamelCase
+      readability-identifier-naming.ConstantPrefix: k
+      readability-identifier-naming.ConstantCase: CamelCase
+
+    Remove: [
+      modernize-use-trailing-return-type,
+      modernize-use-nodiscard,
+      modernize-avoid-c-arrays
+    ]

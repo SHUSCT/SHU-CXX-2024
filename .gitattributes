@@ -1,0 +1,8 @@
+# ==============================================================================
+# @file .gitattributes
+# @brief Git attributes file.
+# ==============================================================================
+
+# Set the default line ending to LF (Unix-style)
+* text=auto eol=lf
+
