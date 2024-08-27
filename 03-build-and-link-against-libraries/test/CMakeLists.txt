@@ -8,4 +8,8 @@ log_info("Source Files: ${TARGET_SRCS}")
 # Create the target with the given name and source files
 add_executable(${TARGET_NAME} ${TARGET_SRCS})
 
-target_link_libraries(${TARGET_NAME} PRIVATE shucxx2024::${PROJECT_NAME})
+target_link_libraries(
+    ${TARGET_NAME} PRIVATE 
+    shucxx2024::${PROJECT_NAME}-TimeCounter 
+    shucxx2024::${PROJECT_NAME}-Math
+)

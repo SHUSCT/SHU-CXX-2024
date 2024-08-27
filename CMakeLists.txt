@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.30)
 
 project("SHUCXX2024")
 
-set(PROJECT_NAMESPACE "shucxx2024")
+set(GLOBAL_NAMESPACE "shucxx2024")
 
 include(${CMAKE_SOURCE_DIR}/cmake/Logging.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/Compiler.cmake)

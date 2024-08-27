@@ -4,11 +4,10 @@
 #include <vector>
 
 #include "03-build-and-link-against-libraries/System.hpp"
-#include "System.hpp"
 
 namespace shucxx2024
 {
-class TimeCounter
+class SHUCXX2024_API TimeCounter
 {
 public:
     explicit TimeCounter() = default;
@@ -17,25 +16,25 @@ public:
 
 public:
     // Clear the content in {resultList}.
-    SHUCXX2024_API void init();
+    void init();
 
     // Clear the content in {resultList}.
-    SHUCXX2024_API void reset();
+    void reset();
 
     // Start counting.
-    SHUCXX2024_API void startCounting();
+    void startCounting();
 
     // Stop counting and store duration into {resultList}.
-    SHUCXX2024_API void endCounting();
+    void endCounting();
 
     // Return average duration in millisecond.
-    SHUCXX2024_API int64_t msecond();
+    int64_t msecond();
 
     // Return average duration in second.
-    SHUCXX2024_API double second();
+    double second();
 
 private:
-    SHUCXX2024_API auto calAverage()
+    auto calAverage()
         -> std::chrono::high_resolution_clock::duration;
 
     bool whetherStart = false;
