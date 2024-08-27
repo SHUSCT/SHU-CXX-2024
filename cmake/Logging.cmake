@@ -1,4 +1,4 @@
-set(LOG_PREFIX "SHUCXX2024")
+set(LOG_PREFIX "SHU-CXX-2024")
 
 function(log_info msg)
     message(STATUS "[${LOG_PREFIX}|INFO] >>> ${msg}")
