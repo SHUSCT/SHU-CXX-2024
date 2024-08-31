@@ -1,5 +1,5 @@
 set(TARGET_NAME "${PROJECT_NAME}-test")
-log_info("Target: ${TARGET_NAME}")
+log_info("${PURPLE_CAT} Target: ${TARGET_NAME}")
 
 # TARGET_SRCS <- All files ending with ".cpp" in "src/"
 file(GLOB_RECURSE TARGET_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")

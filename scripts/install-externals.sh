@@ -1,8 +1,11 @@
 mkdir -p "./build/externals"
 ProjectHome=$(pwd)
 
+git submodule update --init
+
 pushd "./externals/spdlog"
 
+    CC=clang CXX=clang++ \
     cmake -G Ninja -B ./build -S . \
         -DCMAKE_BUILD_TYPE=Release \
         -DSPDLOG_BUILD_SHARED=ON \

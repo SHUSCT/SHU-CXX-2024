@@ -1,9 +1,9 @@
-find_package(spdlog REQUIRED PATHS $ENV{SPDLOG_HOME})
 
 # Build TimeCounter library ====================================================
 
+string(ASCII 27 Esc)
 set(TARGET_NAME "${PROJECT_NAME}-TimeCounter")
-log_info("Target: ${TARGET_NAME}")
+log_info("${PURPLE_CAT} Target: ${TARGET_NAME}")
 
 add_library(${TARGET_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/TimeCounter.cpp")
 add_library(${GLOBAL_NAMESPACE}::${TARGET_NAME} ALIAS ${TARGET_NAME})
@@ -31,7 +31,7 @@ install_libraries(${TARGET_NAME} ${GLOBAL_NAMESPACE} ${TARGET_NAME})
 # Build Math library ============================================================
 
 set(TARGET_NAME "${PROJECT_NAME}-Math")
-log_info("Target: ${TARGET_NAME}")
+log_info("${PURPLE_CAT} Target: ${TARGET_NAME}")
 
 add_library(${TARGET_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/Math.cpp")
 add_library(${GLOBAL_NAMESPACE}::${TARGET_NAME} ALIAS ${TARGET_NAME})

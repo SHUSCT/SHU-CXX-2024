@@ -1,3 +1,6 @@
+string(ASCII 27 Esc)
+set(PURPLE_CAT "${Esc}[0;35mᓚᘏᗢ${Esc}[m")
+
 set(LOG_PREFIX "SHU-CXX-2024")
 
 function(log_info msg)

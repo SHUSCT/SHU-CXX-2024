@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+        // Clangd
+        "llvm-vs-code-extensions.vscode-clangd",
+        // CMake
+        "twxs.cmake",
+        // Doxygen
+        "cschlosser.doxdocgen",
+    ],
+    "unwantedRecommendations": [
+        // Microsoft C/C++ extension pack
+        "ms-vscode.cpptools-extension-pack",
+        // Microsoft CMake Tools
+        "ms-vscode.cmake-tools",
+    ]
+}
