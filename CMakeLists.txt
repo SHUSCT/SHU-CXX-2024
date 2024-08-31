@@ -7,6 +7,5 @@ set(GLOBAL_NAMESPACE "shucxx2024")
 include(${CMAKE_SOURCE_DIR}/cmake/Logging.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/Compiler.cmake)
 
-add_subdirectory("01-introduction-to-cxx")
 add_subdirectory("02-basic-cmake-example")
 add_subdirectory("03-build-and-link-against-libraries")

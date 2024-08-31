@@ -6,6 +6,6 @@ namespace shucxx2024
 {
 void sayHello()
 {
-    std::cout << YEAR ", Hello, World!" << std::endl;
+    std::cout << "SHU " YEAR ", Hello, World!" << std::endl;
 }
 }  // namespace shucxx2024

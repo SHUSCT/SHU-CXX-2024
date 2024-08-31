@@ -16,5 +16,3 @@ pushd "./externals/spdlog"
     cmake --install ./build --prefix "$ProjectHome/build/externals/spdlog"
 
 popd
-
-export SPDLOG_HOME="$ProjectHome/build/externals/spdlog"
