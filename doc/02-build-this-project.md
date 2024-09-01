@@ -24,3 +24,16 @@ bash scripts/build-all.sh
 ```
 
 The generated executables can be found in the "build" directory.
+
+## Notice
+
+- The 01-introduction-to-cxx/Makefile will use a environment variable `SHU_CXX_2024_ROOT_DIR`,
+  which should be set to the root directory of this project.
+  When you are in the root director of this project, can run with below to build.
+  The 01-introduction-to-cxx/Makefile will use `bear` to generate `compile_commands.json` for `clangd`.
+  so maybe you should install `bear` first. Or you can remove the `bear` command in the Makefile.
+
+```bash
+SHU_CXX_2024_ROOT_DIR=$(pwd) make -f 01-introduction-to-cxx/Makefile
+```
+
