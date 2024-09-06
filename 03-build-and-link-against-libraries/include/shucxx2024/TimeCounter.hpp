@@ -1,9 +1,10 @@
 #pragma once
+
 #include <chrono>
 #include <numeric>
 #include <vector>
 
-#include "03-build-and-link-against-libraries/System.hpp"
+#include "shucxx2024/System.hpp"
 
 namespace shucxx2024
 {

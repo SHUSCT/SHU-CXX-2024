@@ -1,5 +1,6 @@
-#include "02-basic-cmake-example/math/fabonacci.hpp"
 #include <cstdint>
+
+#include "shucxx2024/math/fabonacci.hpp"
 
 namespace shucxx2024
 {

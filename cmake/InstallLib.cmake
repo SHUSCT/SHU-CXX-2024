@@ -6,7 +6,7 @@ include(CMakePackageConfigHelpers)
 function(install_libraries LIB_COMPONENT LIB_NAMESPACE LIB_LIST)
     log_info("Install libraries...")
     log_info("|- Component: ${LIB_COMPONENT}")
-    log_info("|- Namespace: ${LIB_NAMESPACE}")
+    log_info("|- Namespace: ${LIB_NAMESPACE}::")
     log_info("|- Library Targets: [ ${LIB_LIST} ]")
 
     # Install libraries

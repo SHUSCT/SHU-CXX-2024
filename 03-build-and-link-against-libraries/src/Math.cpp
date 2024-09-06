@@ -1,16 +1,11 @@
-#include <functional>
-
-#include "03-build-and-link-against-libraries/Math.hpp"
+#include "shucxx2024/Math.hpp"
 
 namespace shucxx2024
 {
-int32_t add(int32_t a, int32_t b)
+double sqrt(double x)
 {
-    return ::std::plus<>{}(a, b);
-};
-
-int32_t sub(int32_t a, int32_t b)
-{
-    return ::std::minus<>{}(a, b);
-};
+    double result = 0.0;
+    asm("sqrtsd %1, %0" : "=x"(result) : "x"(x));
+    return result;
+}
 }  // namespace shucxx2024

@@ -1,4 +1,4 @@
-#include "01-introduction-to-cxx/HelloWorld.hpp"
+#include "shucxx2024/HelloWorld.hpp"
 
 int main()
 {

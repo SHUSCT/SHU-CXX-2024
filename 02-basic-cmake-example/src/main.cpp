@@ -1,7 +1,7 @@
 #include <string>
 
-#include "02-basic-cmake-example/math/fabonacci.hpp"
-#include "02-basic-cmake-example/utils/print.hpp"
+#include "shucxx2024/math/fabonacci.hpp"
+#include "shucxx2024/utils/print.hpp"
 
 int main()
 {

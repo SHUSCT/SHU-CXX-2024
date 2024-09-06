@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "02-basic-cmake-example/utils/print.hpp"
+#include "shucxx2024/utils/print.hpp"
 
 namespace shucxx2024
 {
