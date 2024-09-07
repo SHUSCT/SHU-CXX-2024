@@ -2,7 +2,7 @@ mkdir -p "./build/externals"
 ProjectHome=$(pwd)
 InstallPath="$ProjectHome/build/externals/spdlog/install"
 
-# git submodule update --init
+git submodule update --init
 
 pushd "./externals/spdlog"
 
