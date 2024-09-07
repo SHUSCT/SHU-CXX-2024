@@ -1,3 +1,6 @@
 [submodule "externals/spdlog"]
 	path = externals/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "externals/Yutils"]
+	path = externals/Yutils
+	url = https://github.com/ycshao21/Yutils.git
