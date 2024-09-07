@@ -1,4 +1,4 @@
-include(${CMAKE_SOURCE_DIR}/cmake/Logging.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/Logging.cmake)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 

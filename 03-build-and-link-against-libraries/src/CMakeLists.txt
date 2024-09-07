@@ -21,7 +21,7 @@ else()
     log_info("Building a static library")
 endif()
 
-include(${CMAKE_SOURCE_DIR}/cmake/InstallLib.cmake)
+include(${SHUCXX2024_PROJECT_DIR}/cmake/InstallLib.cmake)
 
 # Build TimeCounter library ====================================================
 
@@ -45,7 +45,7 @@ else()
     log_info("Building a static library")
 endif()
 
-include(${CMAKE_SOURCE_DIR}/cmake/InstallLib.cmake)
+include(${SHUCXX2024_PROJECT_DIR}/cmake/InstallLib.cmake)
 install_libraries(shucxx2024Utilities ${GLOBAL_NAMESPACE} ${TARGET_NAME})
 
 # Build Logger library ============================================================
@@ -73,6 +73,6 @@ endif()
 target_link_libraries(${TARGET_NAME} PUBLIC 
                       spdlog::spdlog $<$<BOOL:${MINGW}>:ws2_32>)
 
-include(${CMAKE_SOURCE_DIR}/cmake/InstallLib.cmake)
+include(${SHUCXX2024_PROJECT_DIR}/cmake/InstallLib.cmake)
 
 install_libraries(shucxx2024Utilities ${GLOBAL_NAMESPACE} ${TARGET_NAME})

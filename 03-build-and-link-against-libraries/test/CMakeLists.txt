@@ -13,4 +13,5 @@ target_link_libraries(
     shucxx2024::${PROJECT_NAME}-TimeCounter 
     shucxx2024::${PROJECT_NAME}-Math
     shucxx2024::${PROJECT_NAME}-Logger
+    Yutils::Yutils
 )

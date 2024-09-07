@@ -18,11 +18,11 @@ public:
     template <typename... Args>
     void log(::spdlog::format_string_t<Args...> fmt, Args&&... args) const
     {
-        m_logger->log(spdlog::level::info, fmt, std::forward<Args>(args)...);
+        m_logger->log(::spdlog::level::info, fmt, std::forward<Args>(args)...);
     }
 
 private:
-    ::std::shared_ptr<spdlog::logger> m_logger;
+    ::std::shared_ptr<::spdlog::logger> m_logger;
 };
 
 }  // namespace shucxx2024

@@ -1,9 +1,8 @@
-SPDLOG_HOME="$(pwd)/build/externals/spdlog"
+SPDLOG_HOME="$(pwd)/build/externals/spdlog/install"
 
-CC=clang CXX=clang++ \
 cmake -G Ninja -S . -B ./build \
     -DCMAKE_BUILD_TYPE=Release \
-    -DSPDLOG_HOME="$(pwd)/build/externals/spdlog" \
+    -DSPDLOG_HOME="$SPDLOG_HOME" \
     -DBUILD_SHARED_LIBS=OFF
 
 cmake --build ./build -j $(nproc)

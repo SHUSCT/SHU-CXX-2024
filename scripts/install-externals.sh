@@ -1,11 +1,13 @@
 mkdir -p "./build/externals"
 ProjectHome=$(pwd)
+InstallPath="$ProjectHome/build/externals/spdlog/install"
 
-git submodule update --init
+# git submodule update --init
 
 pushd "./externals/spdlog"
 
-    CC=clang CXX=clang++ \
+    rm -rf build
+
     cmake -G Ninja -B ./build -S . \
         -DCMAKE_BUILD_TYPE=Release \
         -DSPDLOG_BUILD_SHARED=OFF \
@@ -16,6 +18,13 @@ pushd "./externals/spdlog"
 
     cmake --build ./build -j 8
 
-    cmake --install ./build --prefix "$ProjectHome/build/externals/spdlog"
+    cmake --install ./build --prefix "$InstallPath"
 
 popd
+
+echo
+echo "================================================================================"
+echo "Note: spdlog has been installed to \"$InstallPath\"."
+echo "Remember to set SPDLOG_HOME to this path when building the project."
+echo "================================================================================"
+
