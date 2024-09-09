@@ -10,4 +10,4 @@ include(${SHUCXX2024_PROJECT_DIR}/cmake/Compiler.cmake)
 
 add_subdirectory("02-basic-cmake-example")
 add_subdirectory("03-build-and-link-against-libraries")
-add_subdirectory("04-concept-crtp")
+add_subdirectory("06-concept-crtp")

@@ -1,4 +1,4 @@
-# TARGET_NAME "04-concept-crtp"
+# TARGET_NAME "06-concept-crtp"
 set(TARGET_NAME ${PROJECT_NAME})
 log_info("${PURPLE_CAT} Target: ${TARGET_NAME}")
 
