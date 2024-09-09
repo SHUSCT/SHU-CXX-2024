@@ -1,7 +1,7 @@
 #pragma once
 
 #include <concepts>
-#include <print>
+#include <iostream>
 
 /// @brief: test the concept and crtp part
 namespace shucxx2024::concept_crtp
@@ -55,18 +55,18 @@ template <typename T>
 void print_1(const T& t)
 {
     for (auto i : t) {
-        std::print("{} ", i);
+        std::cout << i << ' ';
     }
-    std::println();
+    std::cout << std::endl;
 }
 
 template <is_iterable T>
 void print_2(const T& t)
 {
     for (auto i : t) {
-        std::print("{} ", i);
+        std::cout << i << ' ';
     }
-    std::println();
+    std::cout << std::endl;
 }
 
 template <typename T>
@@ -74,9 +74,9 @@ auto print_3(const T& t) -> void
     requires is_iterable<T>
 {
     for (auto i : t) {
-        std::print("{} ", i);
+        std::cout << i << ' ';
     }
-    std::println();
+    std::cout << std::endl;
 }
 
 template <typename T>
@@ -106,9 +106,9 @@ template <template <typename...> class TemplClassT, typename InnerT>
 void print_vec(const TemplClassT<InnerT>& t)
 {
     for (auto i : t) {
-        std::print("{} ", i);
+        std::cout << i << ' ';
     }
-    std::println();
+    std::cout << std::endl;
 }
 
 /// @brief: A simple example of CRTP
@@ -133,7 +133,7 @@ class DerivedSimple : public BaseSimple<DerivedSimple>
 
     void implementation()
     {
-        std::println("Derived implementation");
+        std::cout << "Derived implementation\n";
     }
 };
 
@@ -161,7 +161,7 @@ public:
 
     void interface(this auto&& self)
     {
-        std::println("RawT: {}", typeid(RawT).name());
+        std::cout << "RawT: " << typeid(RawT).name() << std::endl;
         self.implementation();
     };
 };
@@ -181,7 +181,7 @@ public:
 protected:
     void implementation()
     {
-        std::println("DerivedComplex<int> implementation");
+        std::cout << "DerivedComplex<int> implementation" << std::endl;
     }
 };
 
