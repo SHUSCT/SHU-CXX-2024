@@ -4,10 +4,10 @@ include(CMakePackageConfigHelpers)
 # ==============================================================================
 # @breif Install target libraries
 function(install_libraries LIB_COMPONENT LIB_NAMESPACE LIB_LIST)
-    log_info("Install libraries...")
-    log_info("|- Component: ${LIB_COMPONENT}")
-    log_info("|- Namespace: ${LIB_NAMESPACE}::")
-    log_info("|- Library Targets: [ ${LIB_LIST} ]")
+    shucxx2024_log_info("Install libraries...")
+    shucxx2024_log_info("|- Component: ${LIB_COMPONENT}")
+    shucxx2024_log_info("|- Namespace: ${LIB_NAMESPACE}::")
+    shucxx2024_log_info("|- Library Targets: [ ${LIB_LIST} ]")
 
     # Install libraries
     install(

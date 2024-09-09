@@ -2,8 +2,6 @@ mkdir -p "./build/externals"
 ProjectHome=$(pwd)
 InstallPath="$ProjectHome/build/externals/spdlog/install"
 
-git submodule update --init
-
 pushd "./externals/spdlog"
 
     rm -rf build
@@ -25,6 +23,5 @@ popd
 echo
 echo "================================================================================"
 echo "Note: spdlog has been installed to \"$InstallPath\"."
-echo "Remember to set SPDLOG_HOME to this path when building the project."
 echo "================================================================================"
 
