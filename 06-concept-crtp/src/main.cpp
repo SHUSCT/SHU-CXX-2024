@@ -1,4 +1,5 @@
-#include "04-concept-crtp/IntroConcept.hpp"
+#include "shucxx2024/IntroConcept.hpp"
+#include <iostream>
 #include <vector>
 
 namespace shucxx2024::concept_crtp
@@ -17,7 +18,7 @@ void want_to_add()
     add_int_float(0, 1);
     add_int_float('a', 'b');  /// char is int8_t
 
-    // std::println("{},{}", p3.x, p3.y);
+    // std::cout << p3.x << ' ' << p3.y << std::endl;
 }
 
 void want_to_print()
