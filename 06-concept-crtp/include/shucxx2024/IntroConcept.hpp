@@ -159,11 +159,23 @@ public:
 
     using RawT = get_raw_t<DerivedT>;
 
+#if (SHUCXX2024_COMPILER_GNU && SHUCXX2024_COMPILER_MAJOR_VERSION >= 14) ||    \
+    (SHUCXX2024_COMPILER_CLANG && SHUCXX2024_COMPILER_MAJOR_VERSION >= 18) ||  \
+    (SHUCXX2024_COMPILER_MSVC && SHUCXX2024_COMPILER_MAJOR_VERSION >= 19 &&    \
+     SHUCXX2024_COMPILER_MINOR_VERSION >= 32)
+    // IF gnu compiler and >= 14, deducing this can be used
     void interface(this auto&& self)
     {
         std::cout << "RawT: " << typeid(RawT).name() << std::endl;
         self.implementation();
     };
+#else
+    void interface()
+    {
+        std::cout << "RawT: " << typeid(RawT).name() << std::endl;
+        static_cast<DerivedT*>(this)->implementation();
+    }
+#endif
 };
 
 template <typename RawT>

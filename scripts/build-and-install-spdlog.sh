@@ -1,8 +1,13 @@
-mkdir -p "./build/externals"
-ProjectHome=$(pwd)
-InstallPath="$ProjectHome/build/externals/spdlog/install"
+# This script builds and installs spdlog to the specified path.
 
-pushd "./externals/spdlog"
+SpdlogProjectDir=$1
+SpdlogInstallPath=$2
+mkdir -p "$SpdlogInstallPath"
+ProjectHome=$(pwd)
+
+echo "Building spdlog from $SpdlogProjectDir and installing to $SpdlogInstallPath..."
+
+pushd $SpdlogProjectDir
 
     rm -rf build
 
@@ -16,12 +21,11 @@ pushd "./externals/spdlog"
 
     cmake --build ./build -j 8
 
-    cmake --install ./build --prefix "$InstallPath"
+    cmake --install ./build --prefix "$SpdlogInstallPath"
 
 popd
 
-echo
 echo "================================================================================"
-echo "Note: spdlog has been installed to \"$InstallPath\"."
+echo "Note: spdlog has been installed to \"$SpdlogInstallPath\"."
 echo "================================================================================"
 
