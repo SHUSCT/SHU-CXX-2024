@@ -8,7 +8,7 @@ if [ -z "$SPDLOG_HOME" ]; then
         SPDLOG_HOME=$SupposedSpdlogHome
     else
         echo "SPDLOG_HOME is not set and \"$SupposedSpdlogHome\" does not exist."
-        echo "Using \"./scripts/install-spdlog.sh\" to clone, build and install spdlog as a git submodule."
+        echo "Using \"./scripts/install-spdlog.sh\" to build and install spdlog as a git submodule."
         # Clone, build and install.
         ./scripts/install-spdlog.sh
         if [ -d $SupposedSpdlogHome ]; then
