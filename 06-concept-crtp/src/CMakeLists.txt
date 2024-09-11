@@ -9,3 +9,8 @@ shucxx2024_log_info("Source Files: ${TARGET_SRCS}")
 add_executable(${TARGET_NAME} ${TARGET_SRCS})
 target_include_directories(${TARGET_NAME}
                            PRIVATE "${PROJECT_SOURCE_DIR}/include")
+
+target_link_libraries(
+    ${TARGET_NAME} PRIVATE 
+    Yutils::Yutils
+)
