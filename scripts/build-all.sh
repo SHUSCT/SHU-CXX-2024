@@ -1,4 +1,4 @@
-git submodule update --remote
+git submodule update --init
 
 # IF: SPDLOG_HOME is not set or does not exist, build and install spdlog:
 if [ -z "$SPDLOG_HOME" ] || [ ! -d "$SPDLOG_HOME" ]; then
