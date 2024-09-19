@@ -9,7 +9,7 @@ if [ -z "$SPDLOG_HOME" ] || [ ! -d "$SPDLOG_HOME" ]; then
         echo -e "Setting SPDLOG_HOME to $SupposedSpdlogHome\e[0m"
         SPDLOG_HOME=$SupposedSpdlogHome
     else
-        echo "SPDLOG_HOME is not set and \"$SupposedSpdlogHome\" does not exist."
+        echo "\"$SupposedSpdlogHome\" does not exist."
         echo "Using \"./scripts/install-spdlog.sh\" to build and install spdlog as a git submodule."
         # Build and install spdlog.
         # $1: spdlog project directory
@@ -27,7 +27,7 @@ if [ -z "$SPDLOG_HOME" ] || [ ! -d "$SPDLOG_HOME" ]; then
     fi
 else 
     # Simply trust that your $SPDLOG_HOME is valid.
-    echo -m "\e[0;32mFound valid SPDLOG_HOME in system variable: $SPDLOG_HOME\e[0m"
+    echo -e "\e[0;32mFound valid SPDLOG_HOME in system variable: $SPDLOG_HOME\e[0m"
 fi
 
 cmake -G Ninja -S . -B ./build \
