@@ -4,7 +4,6 @@ shucxx2024_log_info("${SHUCXX2024_LOG_CAT} Target: ${TARGET_NAME}")
 
 # TARGET_SRCS files are all the source files in the src/
 file(GLOB_RECURSE TARGET_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
-shucxx2024_log_info("Source Files: ${TARGET_SRCS}")
 
 add_executable(${TARGET_NAME} ${TARGET_SRCS})
 target_include_directories(${TARGET_NAME}
