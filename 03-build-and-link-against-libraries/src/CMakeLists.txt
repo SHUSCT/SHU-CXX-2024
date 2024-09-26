@@ -1,3 +1,4 @@
+include(${SHUCXX2024_PROJECT_DIR}/cmake/InstallLib.cmake)
 
 # Build Math library ============================================================
 
@@ -5,7 +6,7 @@ set(TARGET_NAME "${PROJECT_NAME}-Math")
 shucxx2024_log_info("${SHUCXX2024_LOG_CAT} Target: ${TARGET_NAME}")
 
 add_library(${TARGET_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/Math.cpp")
-add_library(${GLOBAL_NAMESPACE}::${TARGET_NAME} ALIAS ${TARGET_NAME})
+add_library(shucxx2024::${TARGET_NAME} ALIAS ${TARGET_NAME})
 
 target_include_directories(
     ${TARGET_NAME} PUBLIC
@@ -21,7 +22,7 @@ else()
     shucxx2024_log_info("Building a static library")
 endif()
 
-include(${SHUCXX2024_PROJECT_DIR}/cmake/InstallLib.cmake)
+install_libraries(shucxx2024Math shucxx2024 ${TARGET_NAME})
 
 # Build TimeCounter library ====================================================
 
@@ -29,7 +30,7 @@ set(TARGET_NAME "${PROJECT_NAME}-TimeCounter")
 shucxx2024_log_info("${SHUCXX2024_LOG_CAT} Target <lib>: ${TARGET_NAME}")
 
 add_library(${TARGET_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/TimeCounter.cpp")
-add_library(${GLOBAL_NAMESPACE}::${TARGET_NAME} ALIAS ${TARGET_NAME})
+add_library(shucxx2024::${TARGET_NAME} ALIAS ${TARGET_NAME})
 
 target_include_directories(
     ${TARGET_NAME} PUBLIC
@@ -46,7 +47,7 @@ else()
 endif()
 
 include(${SHUCXX2024_PROJECT_DIR}/cmake/InstallLib.cmake)
-install_libraries(shucxx2024Utilities ${GLOBAL_NAMESPACE} ${TARGET_NAME})
+install_libraries(shucxx2024Utilities shucxx2024 ${TARGET_NAME})
 
 # Build Logger library ============================================================
 
@@ -54,7 +55,7 @@ set(TARGET_NAME "${PROJECT_NAME}-Logger")
 shucxx2024_log_info("${SHUCXX2024_LOG_CAT} Target: ${TARGET_NAME}")
 
 add_library(${TARGET_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/Logger.cpp")
-add_library(${GLOBAL_NAMESPACE}::${TARGET_NAME} ALIAS ${TARGET_NAME})
+add_library(shucxx2024::${TARGET_NAME} ALIAS ${TARGET_NAME})
 
 target_include_directories(
     ${TARGET_NAME} PUBLIC
@@ -75,4 +76,4 @@ target_link_libraries(${TARGET_NAME} PUBLIC
 
 include(${SHUCXX2024_PROJECT_DIR}/cmake/InstallLib.cmake)
 
-install_libraries(shucxx2024Utilities ${GLOBAL_NAMESPACE} ${TARGET_NAME})
+install_libraries(shucxx2024Utilities shucxx2024 ${TARGET_NAME})
