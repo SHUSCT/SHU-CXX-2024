@@ -7,8 +7,8 @@ pushd 01-introduction-to-cxx
     $CXX -std=c++23 \
         -D YEAR=\"2024\" \
         -I ./include \
-        -c ./src/Helloworld.cpp \
-        -o ../build/01-introduction-to-cxx/Helloworld.o
+        -c ./src/HelloWorld.cpp \
+        -o ../build/01-introduction-to-cxx/HelloWorld.o
 
     $CXX -std=c++23 \
         -D YEAR=\"2024\" \
@@ -18,7 +18,7 @@ pushd 01-introduction-to-cxx
 
     $CXX -std=c++23 \
         -o ../build/01-introduction-to-cxx/01-introduction-to-cxx \
-        ../build/01-introduction-to-cxx/Helloworld.o \
+        ../build/01-introduction-to-cxx/HelloWorld.o \
         ../build/01-introduction-to-cxx/main.o
 
 popd
