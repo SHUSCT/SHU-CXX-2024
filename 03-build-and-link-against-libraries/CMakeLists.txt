@@ -9,4 +9,3 @@ endif()
 
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/test")
-add_subdirectory("${SHUCXX2024_PROJECT_DIR}/externals/Yutils" "${CMAKE_BINARY_DIR}/externals/Yutils")

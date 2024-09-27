@@ -6,17 +6,6 @@
 
 namespace shucxx2024
 {
-template <typename T>
-struct DestructOnlyDeleter
-{
-    void operator()(T* ptr) const noexcept
-    {
-        std::destroy_at(ptr);
-    }
-};
-template <typename T>
-using DestructGuard = std::unique_ptr<T, DestructOnlyDeleter<T>>;
-
 template <typename T, typename A = ::shucxx2024::Allocator<T>>
 struct VectorMemory
 {
@@ -86,24 +75,15 @@ public:
         std::uninitialized_copy(other.mem.ptr, other.mem.ptr + other.count,
                                 this->mem.ptr);
     }
-    Vector& operator=(const Vector& other)
+    Vector& operator=(Vector other)
     {
-        // 不需要额外考虑自赋值情况
-        Vector tmp{other};
-        this->swap(tmp);
-        return *this;
+        // 不需要额外考虑自赋值情况，且左右值通用
+        this->swap(other);
     }
     Vector(Vector&& other) noexcept
         : mem{std::exchange(other.mem, {})},
           count{std::exchange(other.count, 0)}
     {
-    }
-    Vector& operator=(Vector&& other) noexcept
-    {
-        this->swap(other);
-        other.mem = {};
-        other.count = 0;
-        return *this;
     }
     ~Vector()
     {

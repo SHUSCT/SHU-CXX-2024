@@ -46,7 +46,6 @@ else()
     shucxx2024_log_info("Building a static library")
 endif()
 
-include(${SHUCXX2024_PROJECT_DIR}/cmake/InstallLib.cmake)
 install_libraries(shucxx2024Utilities shucxx2024 ${TARGET_NAME})
 
 # Build Logger library ============================================================
@@ -73,7 +72,5 @@ endif()
 
 target_link_libraries(${TARGET_NAME} PUBLIC 
                       spdlog::spdlog $<$<BOOL:${MINGW}>:ws2_32>)
-
-include(${SHUCXX2024_PROJECT_DIR}/cmake/InstallLib.cmake)
 
 install_libraries(shucxx2024Utilities shucxx2024 ${TARGET_NAME})

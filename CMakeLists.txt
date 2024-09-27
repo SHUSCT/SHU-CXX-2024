@@ -15,3 +15,5 @@ add_subdirectory("06-exception-safety")
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     add_subdirectory("07-openmp")
 endif()
+
+add_subdirectory("${SHUCXX2024_PROJECT_DIR}/externals/Yutils")

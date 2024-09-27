@@ -4,6 +4,7 @@
 #include <format>
 #include <iostream>
 #include <utility>
+#include <memory>
 
 namespace shucxx2024
 {
@@ -32,4 +33,14 @@ struct Allocator
         ::operator delete(p, n * sizeof(T));
     }
 };
+template <typename T>
+struct DestructOnlyDeleter
+{
+    void operator()(T* ptr) const noexcept
+    {
+        std::destroy_at(ptr);
+    }
+};
+template <typename T>
+using DestructGuard = std::unique_ptr<T, DestructOnlyDeleter<T>>;
 }  // namespace shucxx2024
